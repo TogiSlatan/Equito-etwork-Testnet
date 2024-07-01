@@ -66,8 +66,8 @@ evm:
     id: 56
     endpoint: bsc-rpc.my-rpc-provider.com
 
-Add more networks as needed
-Replace <your-private-key> with your actual private key and configure RPC endpoints accordingly.
+# Add more networks as needed
+# Replace <your-private-key> with your actual private key and configure RPC endpoints accordingly.
 
 # Step 4: Starting the Equito Full Node
 Run the following command in the equito-testnet directory:

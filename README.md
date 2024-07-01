@@ -44,8 +44,7 @@ sudo docker --version
 Step 2: Setup Folder Structure and Configuration
 Create Folder Structure:
 
-bash
-Kodu kopyala
+
 mkdir equito-testnet
 cd equito-testnet
 Download Configuration and Startup Script:
@@ -76,8 +75,6 @@ Run Docker Containers:
 
 Execute the following command in the equito-testnet folder:
 
-bash
-Kodu kopyala
 bash start-full-node.sh <node-name>
 Replace <node-name> with your desired node name (e.g., MyEquitoNode).
 
@@ -103,16 +100,13 @@ Stop Services:
 
 To stop the services, run:
 
-bash
-Kodu kopyala
+
 docker container stop equito-node
 docker container stop equito-worker
 Restart Services:
 
 To restart the services, run:
 
-bash
-Kodu kopyala
 docker container restart equito-node
 docker container restart equito-worker# Equito-etwork-Testnet
 Equito Full Node setup and configuration

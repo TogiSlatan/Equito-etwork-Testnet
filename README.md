@@ -15,10 +15,12 @@ If Docker is not already installed, follow these steps to install it:
 
 #
 
-# Update the apt package index and install packages to allow apt to use a repository over HTTPS:
+# Step 1: Installing Docker on Ubuntu 22.04
+If Docker is not installed, follow these steps to install it:
 
 ```console
 
+# Update the apt package index and install packages to allow apt to use a repository over HTTPS:
 sudo apt-get update
 sudo apt-get install \
     apt-transport-https \
@@ -27,10 +29,10 @@ sudo apt-get install \
     gnupg \
     lsb-release
 
-# Add Docker's official GPG key:
+# Add Docker’s official GPG key:
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
 
-# Use the following command to set up the stable repository.
+# Set up the stable repository for Docker Engine:
 echo \
   "deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \
   $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
@@ -41,22 +43,24 @@ sudo apt-get install docker-ce docker-ce-cli containerd.io
 
 # Verify that Docker Engine is installed correctly:
 sudo docker --version
-Step 2: Setup Folder Structure and Configuration
-Create Folder Structure:
 
+#
+
+Step 2: Setting Up Folder Structure and Configuration
+Create the folder structure:
+
+```console
 
 mkdir equito-testnet
 cd equito-testnet
-Download Configuration and Startup Script:
 
-Download equito.yaml configuration file and start-full-node.sh startup script into equito-testnet folder.
-Edit Configuration File (equito.yaml):
+# Download the equito.yaml configuration file and start-full-node.sh startup script into the equito-testnet directory.
 
-Open equito.yaml and edit it to include your private key and RPC endpoints for all networks.
-Example (equito.yaml):
+#Step 3: Editing the Configuration File (equito.yaml)
+Open equito.yaml and edit it to include your private key and RPC endpoints for all networks. Here is an example configuration:
 
-yaml
-Kodu kopyala
+```console
+
 private-key: 0x<your-private-key>
 evm:
   - chain: Ethereum
@@ -67,23 +71,23 @@ evm:
   - chain: BSC
     id: 56
     endpoint: bsc-rpc.my-rpc-provider.com
-# more networks ...
-Replace <your-private-key> with your actual private key and configure RPC endpoints accordingly.
+# Add more networks as needed
+#Replace <your-private-key> with your actual private key and configure RPC endpoints accordingly.
 
-Step 3: Start Equito Full Node
-Run Docker Containers:
+# Step 4: Starting the Equito Full Node
+Run the following command in the equito-testnet directory:
 
-Execute the following command in the equito-testnet folder:
+```console
 
 bash start-full-node.sh <node-name>
-Replace <node-name> with your desired node name (e.g., MyEquitoNode).
 
-Verify Node Startup:
+#Replace <node-name> with your desired node name (e.g., MyEquitoNode).
 
-After starting the nodes, verify that the folder structure looks similar to this:
+#Verifying Node Startup
+After starting the nodes, ensure your folder structure resembles:
 
-c
-Kodu kopyala
+```console
+
 ├── equito-testnet
 │   ├── start-full-node.sh
 │   ├── equito.yaml
@@ -93,20 +97,21 @@ Kodu kopyala
 │   ├── logs
 │   │   ├── equito-node.log
 │   │   ├── equito-worker.log
-Ensure p2p_secret is present for peer-to-peer communication between Substrate nodes.
 
-Step 4: Manage Docker Containers
-Stop Services:
+#Ensure the p2p_secret file is present for peer-to-peer communication between Substrate nodes.
 
-To stop the services, run:
+#Step 5: Managing Docker Containers
+To stop services:
 
+```console
 
 docker container stop equito-node
 docker container stop equito-worker
-Restart Services:
 
-To restart the services, run:
+To restart services:
 
 docker container restart equito-node
-docker container restart equito-worker# Equito-etwork-Testnet
-Equito Full Node setup and configuration
+docker container restart equito-worker
+
+#This guide provides a comprehensive overview of setting up an Equito Full Node on Ubuntu 22.04 using Docker. Adjust configurations and commands as needed based on your specific setup and requirements.
+

@@ -13,8 +13,6 @@ Docker installed and configured
 Step 1: Install Docker on Ubuntu 22.04
 If Docker is not already installed, follow these steps to install it:
 
-bash
-Kodu kopyala
 # Update the apt package index and install packages to allow apt to use a repository over HTTPS:
 sudo apt-get update
 sudo apt-get install \
@@ -41,8 +39,6 @@ sudo docker --version
 Step 2: Setup Folder Structure and Configuration
 Create Folder Structure:
 
-bash
-Kodu kopyala
 mkdir equito-testnet
 cd equito-testnet
 Download Configuration and Startup Script:
@@ -53,8 +49,6 @@ Edit Configuration File (equito.yaml):
 Open equito.yaml and edit it to include your private key and RPC endpoints for all networks.
 Example (equito.yaml):
 
-yaml
-Kodu kopyala
 private-key: 0x<your-private-key>
 evm:
   - chain: Ethereum
@@ -65,7 +59,9 @@ evm:
   - chain: BSC
     id: 56
     endpoint: bsc-rpc.my-rpc-provider.com
-# more networks ...
+
+
+
 Replace <your-private-key> with your actual private key and configure RPC endpoints accordingly.
 
 Step 3: Start Equito Full Node
@@ -73,8 +69,6 @@ Run Docker Containers:
 
 Execute the following command in the equito-testnet folder:
 
-bash
-Kodu kopyala
 bash start-full-node.sh <node-name>
 Replace <node-name> with your desired node name (e.g., MyEquitoNode).
 
@@ -82,8 +76,7 @@ Verify Node Startup:
 
 After starting the nodes, verify that the folder structure looks similar to this:
 
-c
-Kodu kopyala
+
 ├── equito-testnet
 │   ├── start-full-node.sh
 │   ├── equito.yaml
@@ -100,16 +93,12 @@ Stop Services:
 
 To stop the services, run:
 
-bash
-Kodu kopyala
 docker container stop equito-node
 docker container stop equito-worker
 Restart Services:
 
 To restart the services, run:
 
-bash
-Kodu kopyala
 docker container restart equito-node
 docker container restart equito-worker# Equito-etwork-Testnet
 Equito Full Node setup and configuration

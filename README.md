@@ -18,7 +18,6 @@ If Docker is not already installed, follow these steps to install it:
 # Step 1: Installing Docker on Ubuntu 22.04
 If Docker is not installed, follow these steps to install it:
 
-```console
 
 # Update the apt package index and install packages to allow apt to use a repository over HTTPS:
 sudo apt-get update
@@ -44,22 +43,17 @@ sudo apt-get install docker-ce docker-ce-cli containerd.io
 # Verify that Docker Engine is installed correctly:
 sudo docker --version
 
-#
 
-Step 2: Setting Up Folder Structure and Configuration
+# Step 2: Setting Up Folder Structure and Configuration
 Create the folder structure:
-
-```console
 
 mkdir equito-testnet
 cd equito-testnet
 
 # Download the equito.yaml configuration file and start-full-node.sh startup script into the equito-testnet directory.
 
-#Step 3: Editing the Configuration File (equito.yaml)
+# Step 3: Editing the Configuration File (equito.yaml)
 Open equito.yaml and edit it to include your private key and RPC endpoints for all networks. Here is an example configuration:
-
-```console
 
 private-key: 0x<your-private-key>
 evm:
@@ -71,22 +65,19 @@ evm:
   - chain: BSC
     id: 56
     endpoint: bsc-rpc.my-rpc-provider.com
-# Add more networks as needed
-#Replace <your-private-key> with your actual private key and configure RPC endpoints accordingly.
+
+Add more networks as needed
+Replace <your-private-key> with your actual private key and configure RPC endpoints accordingly.
 
 # Step 4: Starting the Equito Full Node
 Run the following command in the equito-testnet directory:
 
-```console
-
 bash start-full-node.sh <node-name>
 
-#Replace <node-name> with your desired node name (e.g., MyEquitoNode).
+# Replace <node-name> with your desired node name (e.g., MyEquitoNode).
 
-#Verifying Node Startup
+# Verifying Node Startup
 After starting the nodes, ensure your folder structure resembles:
-
-```console
 
 ├── equito-testnet
 │   ├── start-full-node.sh
@@ -98,12 +89,10 @@ After starting the nodes, ensure your folder structure resembles:
 │   │   ├── equito-node.log
 │   │   ├── equito-worker.log
 
-#Ensure the p2p_secret file is present for peer-to-peer communication between Substrate nodes.
+# Ensure the p2p_secret file is present for peer-to-peer communication between Substrate nodes.
 
-#Step 5: Managing Docker Containers
+# Step 5: Managing Docker Containers
 To stop services:
-
-```console
 
 docker container stop equito-node
 docker container stop equito-worker

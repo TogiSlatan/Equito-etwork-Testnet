@@ -13,7 +13,7 @@ Docker installed and configured
 Step 1: Install Docker on Ubuntu 22.04
 If Docker is not already installed, follow these steps to install it:
 
-#
+```console
 
 # Step 1: Installing Docker on Ubuntu 22.04
 If Docker is not installed, follow these steps to install it:

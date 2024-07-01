@@ -1,4 +1,4 @@
-Prerequisites
+# Prerequisites
 Hardware Requirements:
 
 CPU Cores: Minimum 4 cores
@@ -13,9 +13,12 @@ Docker installed and configured
 Step 1: Install Docker on Ubuntu 22.04
 If Docker is not already installed, follow these steps to install it:
 
-bash
-Kodu kopyala
+#
+
 # Update the apt package index and install packages to allow apt to use a repository over HTTPS:
+
+```console
+
 sudo apt-get update
 sudo apt-get install \
     apt-transport-https \

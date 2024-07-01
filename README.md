@@ -97,10 +97,10 @@ To stop services:
 docker container stop equito-node
 docker container stop equito-worker
 
-To restart services:
+# To restart services:
 
 docker container restart equito-node
 docker container restart equito-worker
 
-#This guide provides a comprehensive overview of setting up an Equito Full Node on Ubuntu 22.04 using Docker. Adjust configurations and commands as needed based on your specific setup and requirements.
+# This guide provides a comprehensive overview of setting up an Equito Full Node on Ubuntu 22.04 using Docker. Adjust configurations and commands as needed based on your specific setup and requirements.
 
